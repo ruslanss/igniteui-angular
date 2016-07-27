@@ -20,6 +20,8 @@ app.controller('gbbgGridController',
   
         $scope.gbbg = gbbg.data;
 
+        $scope.load = function() {
+            console.info("loading...");
         $scope.gridOptions = {
             dataSource: $scope.gbbg,
             width: "100%",
@@ -52,6 +54,12 @@ app.controller('gbbgGridController',
             ]*/
 
         };
+                    $("#grid1").igGrid("destroy");
+            $("#grid1").igGrid($scope.gridOptions);
+
+        };
+
+    
 
     }]);
 
