@@ -13,6 +13,48 @@
 var app = angular.module('igniteui-sample', ['igniteui-directives']);
 
 // controllers
+app.controller('gbbgGridController',
+
+            ['$scope', 'gbbg',
+    function ($scope,   gbbg) {
+  
+        $scope.gbbg = gbbg.data;
+
+        $scope.gridOptions = {
+            dataSource: $scope.gbbg,
+            width: "100%",
+            height: "400px",
+            primaryKey: "supplierId",
+            autoCommit: false,
+            autoGenerateColumns: false,
+                            rowVirtualization: true,
+                enableHoverStyles: false,
+                virtualizationMode: "continuous",
+            columns: [
+                    { headerText: "id", key: "supplierId", dataType: "string", width: "0", hidden: true, readOnly: true },
+                    { headerText: "Vendor", key: "supplier", dataType: "string", width: "300px", readOnly: true },
+                    { headerText: "GM", key: "grandMasterCode", dataType: "string", width: "80px", readOnly: true },
+                    { headerText: "Dept", key: "departmentCode", dataType: "string", width: "80px", readOnly: true },
+                    { headerText: "", key: "spacer", dataType: "string", width: "16px", readOnly: true }
+            ],
+            features: []
+           /*     {
+                    name: "Tooltips"
+                },
+                {
+                    name: "Filtering",
+                    allowFiltering: true,
+                    caseSensitive: false,
+                    columnSettings: [
+                        { columnKey: "spacer", allowFiltering: false }
+                    ]
+                }
+            ]*/
+
+        };
+
+    }]);
+
 app.controller('gridController',
 
             ['$scope', 'northwind',
