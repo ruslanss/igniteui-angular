@@ -39,8 +39,8 @@ app.controller('gbbgGridController',
                     { headerText: "Dept", key: "departmentCode", dataType: "string", width: "80px", readOnly: true },
                     { headerText: "", key: "spacer", dataType: "string", width: "16px", readOnly: true }
             ],
-            features: []
-           /*     {
+            features: [
+            {
                     name: "Tooltips"
                 },
                 {
@@ -51,7 +51,7 @@ app.controller('gbbgGridController',
                         { columnKey: "spacer", allowFiltering: false }
                     ]
                 }
-            ]*/
+            ]
 
         };
                     $("#grid1").igGrid("destroy");
